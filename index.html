@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commune de Coki — Site officiel (prototype)</title>
+<meta name="description" content="Prototype du site de la commune de Coki : territoire, projets, carte interactive et coopération.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#accueil"><span class="blason" aria-hidden="true">C</span><span><strong data-site="nom"></strong><small data-site="region"></small></span></a>
+  <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+  <nav id="nav">
+    <a href="#territoire">Territoire</a><a href="#carte">Carte</a><a href="#projets">Projets</a>
+    <a href="#ecoles">Écoles</a><a href="#cooperation">Coopération</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+<section id="accueil" class="hero">
+  <div class="wrap">
+    <p class="kicker">Commune de <span data-site="nom"></span> <span class="alt" data-site="variante-fmt"></span></p>
+    <h1 data-site="devise"></h1>
+    <p class="lead">Découvrez notre territoire, nos projets en cours et la carte interactive de la commune.</p>
+    <p class="cta"><a class="btn" href="#carte">Voir la carte</a> <a class="btn ghost" href="#projets">Nos projets</a></p>
+  </div>
+</section>
+
+<section id="territoire" class="wrap">
+  <h2>Le territoire en chiffres</h2>
+  <div class="chiffres">
+    <div><b>268,9 km²</b><span>de superficie</span></div>
+    <div><b>56</b><span>villages</span></div>
+    <div><b>5</b><span>zones</span></div>
+    <div><b>29 317</b><span>habitants (recensement 2023)</span></div>
+    <div><b>47</b><span>écoles et établissements</span></div>
+  </div>
+  <p class="note">Une économie rurale tournée vers l'arachide, le mil et le sésame, avec environ 21 600 ha cultivables, dans un climat sahélien (250 à 300 mm de pluie par an).</p>
+</section>
+
+<section id="carte" class="alt-bg">
+  <div class="wrap">
+    <h2>Carte interactive</h2>
+    <p>Aperçu de l'emprise communale. La carte complète (routes, bâti, santé, éducation, limites administratives…) sera accessible dans l'application cartographique de la commune.</p>
+    <div id="map" role="img" aria-label="Carte de la commune"></div>
+    <p class="cta"><a class="btn" id="lien-qwc" href="#" target="_blank" rel="noopener">Ouvrir l'application cartographique</a></p>
+  </div>
+</section>
+
+<section id="projets" class="wrap">
+  <h2>Projets de la commune</h2>
+  <p class="sub">Projets structurants, en recherche de partenaires et de financements.</p>
+  <div class="cards">
+    <article class="card"><span class="tag">Eau potable</span><h3>Forage de Belel Diop — phase 1</h3>
+      <p>Rendre opérationnel le forage existant et son château d'eau de 150 m³ : pompage solaire hybride, environ 3,5 km de réseau, 6 bornes-fontaines et 10 branchements (écoles, poste de santé, daara, lieux de culte). Gestion confiée à une association d'usagers (ASUFOR).</p>
+      <ul><li>3 villages desservis, environ 2 000 habitants (8 villages à terme)</li><li>Budget : 98 M FCFA — 12 mois</li></ul></article>
+    <article class="card"><span class="tag">Sport</span><h3>Stade municipal</h3>
+      <p>Gazon synthétique de 4 600 m², tribune de 1 500 places, éclairage LED, mosquée de 120 places et sanitaires.</p>
+      <ul><li>Budget : 140 M FCFA — 18 mois</li></ul></article>
+    <article class="card"><span class="tag">Cadre de vie</span><h3>Espace public vert</h3>
+      <p>Parc de 1,08 ha avec allées, plantations, aires de jeux, éclairage, terrain de basket et mini-foot avec tribune.</p>
+      <ul><li>Budget : 95,6 M FCFA TTC</li></ul></article>
+  </div>
+</section>
+
+<section id="ecoles" class="alt-bg">
+  <div class="wrap">
+    <h2>Écoles : équiper chaque classe</h2>
+    <div class="chiffres">
+      <div><b>47</b><span>établissements</span></div><div><b>5 174</b><span>élèves</span></div>
+      <div><b>3 079</b><span>filles</span></div><div><b>103</b><span>salles en dur</span></div>
+    </div>
+    <p>La commune sollicite ses partenaires pour du matériel scolaire : tables-bancs, bureaux, matériel de géométrie, équipement informatique, jeux pour le préscolaire et matériel d'hygiène.</p>
+  </div>
+</section>
+
+<section id="cooperation" class="wrap">
+  <h2>Coopération décentralisée</h2>
+  <p>La commune de <span data-site="nom"></span> ouvre un dialogue avec la Ville de Dijon pour construire une coopération au service de l'eau, de l'éducation et de la jeunesse. Les outils numériques et cartographiques développés avec le CEGIT permettent de suivre les projets de manière transparente.</p>
+</section>
+
+<section id="contact" class="alt-bg">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p id="contact-lignes"></p>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap" id="pied"></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="config.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
