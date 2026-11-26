@@ -25,7 +25,7 @@
       var f = F[form] || {}, an = new Date().getFullYear();
       var rec = Object.assign({
         num: (f.prefixe || "DOS") + "-" + an + "-" + String(Math.floor(1000 + Math.random() * 9000)),
-        form: form, date: new Date().toISOString().slice(0, 16), d: donnees, local: true
+        form: form, date: new Date().toISOString(), d: donnees, local: true
       }, extra || {});
       var tous = this.mesDossiers(); tous.unshift(rec);
       if (!ecrire(CLE, tous)) memoire = tous;
