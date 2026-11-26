@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Démarches — Commune de Coki</title>
+<meta name="description" content="Toutes les démarches administratives de la commune : état civil, résidence, foncier, marchés, associations, signalements.">
+<meta name="theme-color" content="#0b5d3b">
+<link rel="icon" href="assets/img/logo-commune.png">
+<link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="demarches">
+<main id="contenu">
+<section class="page-tete"><div class="wrap"><nav class="ariane" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › Démarches</nav><h1>Démarches</h1><p>Trouvez la démarche qui vous concerne : où aller, qui peut la faire, les pièces à fournir et les délais. Cochez vos pièces et imprimez votre liste avant de vous déplacer.</p></div></section>
+<section class="section">
+  <div class="wrap dem-barre">
+    <aside class="dem-filtres" aria-label="Filtres">
+      <div><h3>Thèmes</h3><div class="filtre-liste" id="f-cat"></div></div>
+      <div><h3>Vous êtes</h3><div class="filtre-liste" id="f-profil"></div></div>
+    </aside>
+    <div>
+      <div class="avertissement"><i data-lucide="info"></i><span>Prototype : les pièces, coûts et délais sont indicatifs et seront validés par les services de la mairie.</span></div>
+      <label class="dem-champ"><i data-lucide="search"></i><span class="sr">Filtrer les démarches</span><input id="dem-q" type="search" placeholder="Filtrer : naissance, terrain, marché…"></label>
+      <p id="dem-compteur" style="color:var(--gris);font-weight:700;margin:-6px 0 12px" aria-live="polite"></p>
+      <div class="dem-liste" id="dem-liste"></div>
+    </div>
+  </div>
+</section>
+<dialog class="fiche" id="fiche"></dialog>
+</main>
+<script src="config.js"></script>
+<script src="data/demarches.js"></script>
+<script src="data/actualites.js"></script>
+<script src="data/limite.js"></script>
+<script src="assets/vendor/lucide.min.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/pages.js"></script>
+</body>
+</html>

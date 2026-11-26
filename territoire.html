@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Territoire — Commune de Coki</title>
+<meta name="description" content="Le territoire de la commune : chiffres clés, carte interactive, villages, ressources, histoire et patrimoine.">
+<meta name="theme-color" content="#0b5d3b">
+<link rel="icon" href="assets/img/logo-commune.png">
+<link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="territoire">
+<main id="contenu">
+<section class="page-tete"><div class="wrap"><nav class="ariane" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › Le territoire</nav><h1>Le territoire</h1><p>Chef-lieu de l'arrondissement du même nom, <span data-site="nom">Coki</span> s'étend sur près de 269 km² au sud de Louga, en zone sahélienne : 56 villages, une économie agricole et un patrimoine religieux de renommée nationale.</p></div></section>
+<section class="section">
+  <div class="wrap">
+    <div class="chiffres">
+      <div class="chiffre"><b>29 317</b><span>habitants (RGPH-5, 2023)</span></div>
+      <div class="chiffre"><b>268,9 km²</b><span>de superficie</span></div>
+      <div class="chiffre"><b>56</b><span>villages, 5 zones</span></div>
+      <div class="chiffre"><b>250–300 mm</b><span>de pluie par an</span></div>
+      <div class="chiffre"><b>21 587 ha</b><span>de terres cultivables</span></div>
+      <div class="chiffre"><b>6</b><span>forages</span></div>
+    </div>
+    <p style="color:var(--gris);font-size:.88rem;margin-top:10px">Sources : ANSD, recensement général de la population 2023 ; Plan local de développement de la commune.</p>
+  </div>
+</section>
+
+<section class="section teinte" id="carte">
+  <div class="wrap">
+    <div class="section-tete"><div><span class="surtitre">Carte interactive</span><h2>La commune sur la carte</h2></div>
+      <a class="btn btn-plein" data-qwc href="#" target="_blank" rel="noopener"><i data-lucide="external-link"></i>Ouvrir l'application cartographique</a></div>
+    <div id="carte-commune" class="carte-map" role="region" aria-label="Carte de la commune"></div>
+    <p style="color:var(--gris);font-size:.9rem;margin-top:10px">Limite communale issue de la base de données géographique de la commune. L'application cartographique présente les écoles, la santé, les pistes, l'eau et les équipements.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap grille g3">
+    <div class="carte-bloc"><span class="pastille"><i data-lucide="map-pin"></i></span><h3>Villages et zones</h3><p>Les 56 villages sont regroupés en 5 zones, qui organisent la concertation et les services. Liste détaillée et carte des villages en préparation.</p></div>
+    <div class="carte-bloc"><span class="pastille"><i data-lucide="sun"></i></span><h3>Un climat sahélien</h3><p>Une seule saison des pluies, de juillet à octobre, et aucun cours d'eau permanent : l'eau vient des nappes souterraines, souvent salées.</p></div>
+    <div class="carte-bloc"><span class="pastille"><i data-lucide="wheat"></i></span><h3>Une économie agricole</h3><p>Arachide, mil et sésame, élevage, commerce et artisanat ; des groupements de femmes et des GIE actifs.</p></div>
+  </div>
+</section>
+
+<section class="section teinte" id="histoire">
+  <div class="wrap deux-col">
+    <div>
+      <span class="surtitre">Histoire et patrimoine</span><h2>Une terre d'histoire</h2>
+      <p>Au cœur de l'ancien royaume du Cayor, <span data-site="nom">Coki</span> a été le théâtre d'épisodes marquants du XIXᵉ siècle, avant de devenir, au XXᵉ siècle, l'un des grands foyers d'enseignement religieux du Sénégal.</p>
+      <a class="btn btn-ligne" href="vivre.html#daara">Le Daara de Koki</a>
+    </div>
+    <ol class="frise">
+      <li><b>1862</b><span>Les partisans de Lat Dior l'emportent à <span data-site="nom">Coki</span> sur son rival au trône du Cayor, Madiodio.</span></li>
+      <li><b>1875</b><span>Lat Dior et Alboury Ndiaye remportent la bataille de Samba Sadio, près de <span data-site="nom">Coki</span>.</span></li>
+      <li><b>1939</b><span>Cheikh Ahmed Sakhir Lô fonde le Daara de Koki.</span></li>
+      <li><b>2013</b><span>L'Acte III de la décentralisation fait de <span data-site="nom">Coki</span> une commune de plein exercice.</span></li>
+      <li><b>2023</b><span>Le recensement dénombre 29 317 habitants.</span></li>
+    </ol>
+  </div>
+</section>
+</main>
+<script src="config.js"></script>
+<script src="data/demarches.js"></script>
+<script src="data/actualites.js"></script>
+<script src="data/limite.js"></script>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script src="assets/vendor/lucide.min.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/pages.js"></script>
+</body>
+</html>

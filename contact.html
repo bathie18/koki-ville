@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact et signalement — Commune de Coki</title>
+<meta name="description" content="Contacter la mairie, signaler un problème sur la commune.">
+<meta name="theme-color" content="#0b5d3b">
+<link rel="icon" href="assets/img/logo-commune.png">
+<link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="contact">
+<main id="contenu">
+<section class="page-tete"><div class="wrap"><nav class="ariane" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › Contact</nav><h1>Contact</h1><p>Écrivez à la mairie ou signalez un problème sur la commune : chaque signalement est localisé pour être traité plus vite.</p></div></section>
+<section class="section"><div class="wrap deux-col">
+  <div>
+    <h2>Écrire à la mairie</h2>
+    <form class="form" data-prototype="#conf-message">
+      <div class="form-ligne"><label>Nom et prénom<input name="nom" required autocomplete="name"></label>
+        <label>Téléphone ou courriel<input name="contact" required></label></div>
+      <label>Objet<select name="objet" required><option value="">Choisir…</option><option>Question sur une démarche</option><option>Projet ou partenariat</option><option>Diaspora</option><option>Autre</option></select></label>
+      <label>Message<textarea name="message" rows="5" required></textarea></label>
+      <button class="btn btn-plein" type="submit"><i data-lucide="send"></i>Envoyer</button>
+    </form>
+    <div class="confirmation" id="conf-message" role="status"><b>Message prêt à être transmis.</b> Dans la version en service, il sera envoyé à la mairie, qui vous répondra.</div>
+  </div>
+  <div class="encart">
+    <h3>Mairie</h3>
+    <p id="contact-adresse"></p>
+    <table class="horaires" id="horaires-contact"><tbody></tbody></table>
+  </div>
+</div></section>
+
+<section class="section teinte" id="signaler"><div class="wrap">
+  <div class="section-tete"><div><span class="surtitre">Signalement</span><h2>Signaler un problème</h2></div></div>
+  <div class="deux-col">
+    <form class="form" data-prototype="#conf-signal">
+      <fieldset style="border:0;padding:0;margin:0"><legend style="font-weight:700;margin-bottom:8px">Type de problème</legend>
+        <div class="types">
+          <label><input type="radio" name="type" value="eclairage" required><i data-lucide="lightbulb"></i>Éclairage</label>
+          <label><input type="radio" name="type" value="piste"><i data-lucide="route"></i>Piste ou route</label>
+          <label><input type="radio" name="type" value="eau"><i data-lucide="droplet"></i>Point d'eau</label>
+          <label><input type="radio" name="type" value="dechets"><i data-lucide="trash-2"></i>Déchets</label>
+          <label><input type="radio" name="type" value="batiment"><i data-lucide="school"></i>École ou bâtiment</label>
+          <label><input type="radio" name="type" value="autre"><i data-lucide="triangle-alert"></i>Autre</label>
+        </div></fieldset>
+      <label>Village ou quartier<input name="village" required></label>
+      <label>Description<textarea name="description" rows="4" required placeholder="Décrivez le problème en quelques mots"></textarea></label>
+      <label>Photo (facultatif)<input type="file" name="photo" accept="image/*" capture="environment"></label>
+      <label>Localisation <span class="aide">Cliquez sur la carte à l'endroit du problème, ou utilisez votre position.</span><input id="sig-loc" name="localisation" readonly placeholder="Latitude, longitude"></label>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-ligne" type="button" id="sig-geoloc"><i data-lucide="locate-fixed"></i>Ma position</button>
+        <button class="btn btn-plein" type="submit"><i data-lucide="send"></i>Envoyer le signalement</button></div>
+      <div class="confirmation" id="conf-signal" role="status"><b>Signalement enregistré (démonstration) : <span class="num"></span>.</b> Dans la version en service, il est transmis aux services techniques et apparaît sur la carte de suivi des interventions.</div>
+    </form>
+    <div id="carte-signal" class="carte-map" role="region" aria-label="Carte pour localiser le problème"></div>
+  </div>
+</div></section>
+</main>
+<script src="config.js"></script>
+<script src="data/demarches.js"></script>
+<script src="data/actualites.js"></script>
+<script src="data/limite.js"></script>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script src="assets/vendor/lucide.min.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/pages.js"></script>
+</body>
+</html>
