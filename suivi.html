@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suivre ma demande — Commune de Coki</title>
+<meta name="description" content="Suivre l'avancement d'une demande ou d'un signalement.">
+<meta name="theme-color" content="#0b5d3b">
+<link rel="icon" href="assets/img/logo-commune.png">
+<link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="suivi">
+<main id="contenu">
+<section class="page-tete"><div class="wrap"><nav class="ariane" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › Suivre ma demande</nav><h1>Suivre ma demande</h1><p>Saisissez le numéro de dossier indiqué sur votre accusé de réception.</p></div></section>
+<section class="section"><div class="wrap deux-col">
+  <div>
+    <form class="recherche" id="suivi-form" role="search" style="max-width:none"><div style="display:flex;background:#fff;border:2px solid var(--ligne);border-radius:16px;padding:6px">
+      <label class="sr" for="suivi-num">Numéro de dossier</label>
+      <input id="suivi-num" placeholder="Ex. EC-2026-1184" autocomplete="off" style="flex:1;min-width:0;border:0;padding:12px 14px;font:600 1.05rem var(--texte);text-transform:uppercase;background:transparent">
+      <button class="btn btn-plein" type="submit"><i data-lucide="search"></i>Rechercher</button></div></form>
+    <div id="suivi-resultat" style="margin-top:22px"></div>
+  </div>
+  <div><h2 style="font-size:1.3rem">Mes demandes sur cet appareil</h2><div class="annuaire" id="mes-dossiers"></div>
+    <p class="aide" style="margin-top:14px">Exemples à tester : EC-2026-1184 (traité), AF-2026-0093 (en cours), SIG-2026-3021 (reçu).</p></div>
+</div></section>
+</main>
+<script src="config.js"></script>
+<script src="data/demarches.js"></script>
+<script src="data/actualites.js"></script>
+<script src="data/limite.js"></script>
+<script src="data/formulaires.js"></script>
+<script src="assets/vendor/lucide.min.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/formulaires.js"></script>
+<script src="assets/js/pages.js"></script>
+</body>
+</html>

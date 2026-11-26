@@ -47,7 +47,7 @@
       });
       compteur.textContent = r.length + (r.length > 1 ? " démarches" : " démarche");
       liste.innerHTML = r.length ? r.map(function (d) {
-        return '<button class="dem" type="button" data-id="' + d.id + '"><span class="pastille' + (d.cat === "signalement" ? " rouge" : "") + '"><i data-lucide="' + nomCat(d.cat).icone + '"></i></span><span><h3>' + K.esc(d.titre) + "</h3><p>" + K.esc(d.resume) + '</p></span><i class="chevron" data-lucide="chevron-right"></i></button>';
+        return '<button class="dem" type="button" data-id="' + d.id + '"><span class="pastille' + (d.cat === "signalement" ? " rouge" : "") + '"><i data-lucide="' + nomCat(d.cat).icone + '"></i></span><span><h3>' + K.esc(d.titre) + (K.formulaireDe && K.formulaireDe(d.id) ? ' <span class="etiquette en-ligne">En ligne</span>' : "") + "</h3><p>" + K.esc(d.resume) + '</p></span><i class="chevron" data-lucide="chevron-right"></i></button>';
       }).join("") : '<div class="dem-vide">Aucune démarche ne correspond. Contactez la mairie : nous vous orienterons.</div>';
       K.icones(liste);
     }
@@ -70,7 +70,8 @@
         (d.etapes ? '<div><h3>Les étapes</h3><ol class="etapes">' + d.etapes.map(function (s) { return "<li>" + K.esc(s) + "</li>"; }).join("") + "</ol></div>" : "") +
         (d.infos ? '<div class="bon-a-savoir"><b>Bon à savoir.</b> ' + K.esc(d.infos) + "</div>" : "") +
         '<div class="avertissement" style="margin:0"><i data-lucide="info"></i><span>Informations indicatives à confirmer auprès des services de la mairie avant de vous déplacer.</span></div>' +
-        '<div class="fiche-actions"><button class="btn btn-plein" type="button" data-action="imprimer"><i data-lucide="printer"></i>Imprimer ma liste</button><a class="btn btn-ligne" href="contact.html"><i data-lucide="mail"></i>Poser une question</a></div></div>';
+        '<div class="fiche-actions">' + (K.formulaireDe && K.formulaireDe(d.id) ? '<a class="btn btn-or" href="' + K.formulaireDe(d.id) + '"><i data-lucide="send"></i>Faire la demande en ligne</a>' : "") +
+        '<button class="btn btn-plein" type="button" data-action="imprimer"><i data-lucide="printer"></i>Imprimer ma liste</button><a class="btn btn-ligne" href="contact.html"><i data-lucide="mail"></i>Poser une question</a></div></div>';
       dlg.setAttribute("aria-labelledby", "fiche-titre");
       K.icones(dlg);
       if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
@@ -98,35 +99,6 @@
 
   // ---------- Cartes
   if ($("#carte-commune")) K.carte("carte-commune");
-
-  // ---------- Signalement localisé (page Contact)
-  if ($("#carte-signal")) {
-    var mc = K.carte("carte-signal"), repere = null, champLoc = $("#sig-loc");
-    if (mc) mc.on("click", function (e) {
-      var ll = e.latlng;
-      if (repere) repere.setLatLng(ll); else repere = L.marker(ll).addTo(mc);
-      champLoc.value = ll.lat.toFixed(5) + ", " + ll.lng.toFixed(5);
-    });
-    $("#sig-geoloc").addEventListener("click", function () {
-      if (!navigator.geolocation) return;
-      navigator.geolocation.getCurrentPosition(function (p) {
-        var ll = L.latLng(p.coords.latitude, p.coords.longitude);
-        if (repere) repere.setLatLng(ll); else repere = L.marker(ll).addTo(mc);
-        mc.setView(ll, 15); champLoc.value = ll.lat.toFixed(5) + ", " + ll.lng.toFixed(5);
-      });
-    });
-  }
-  $$("form[data-prototype]").forEach(function (f) {
-    f.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!f.reportValidity()) return;
-      var conf = $(f.getAttribute("data-prototype"));
-      var num = "SIG-" + new Date().getFullYear() + "-" + String(Math.floor(Math.random() * 9000) + 1000);
-      $(".num", conf) && ($(".num", conf).textContent = num);
-      conf.classList.add("ok"); conf.setAttribute("tabindex", "-1"); conf.focus();
-      f.reset(); if (repere && mc) { mc.removeLayer(repere); repere = null; }
-    });
-  });
 
   // ---------- Horaires et coordonnées (pages Mairie et Contact)
   var hTr = (S.horaires || []).map(function (h) { return "<tr><td>" + K.esc(h[0]) + "</td><td>" + K.esc(h[1]) + "</td></tr>"; }).join("");

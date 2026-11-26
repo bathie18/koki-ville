@@ -39,6 +39,7 @@
     ["actualites.html", "Actualités et agenda", "actualités agenda événements infos", "newspaper"],
     ["cooperation.html", "Coopération avec Dijon et partenaires", "coopération dijon france partenaires diaspora jumelage", "handshake"],
     ["contact.html", "Contacter la mairie", "contact téléphone courriel adresse écrire", "mail"],
+    ["suivi.html", "Suivre ma demande", "suivi dossier numéro demande avancement état", "search"],
     ["contact.html#signaler", "Signaler un problème", "signaler problème panne éclairage piste déchets", "triangle-alert"]
   ];
 
@@ -54,7 +55,7 @@
   tete += '<div class="utile"><div class="wrap"><div class="utile-g">' +
     '<span><i data-lucide="phone"></i>' + esc(S.contact && S.contact.telephone) + "</span>" +
     '<span><i data-lucide="map-pin"></i>' + esc(S.region) + "</span></div>" +
-    '<div class="utile-d"><a href="demarches.html">Démarches</a><a href="contact.html#signaler">Signaler un problème</a>' +
+    '<div class="utile-d"><a href="suivi.html">Suivre ma demande</a><a href="contact.html#signaler">Signaler un problème</a>' +
     '<a href="' + esc(S.qwc) + '" target="_blank" rel="noopener">Application cartographique</a>' +
     '<span class="langue" title="Version en wolof en préparation"><b>FR</b><i>WO</i></span></div></div></div>';
   tete += '<header class="entete"><div class="wrap">' +
@@ -79,10 +80,10 @@
     '<div><div class="pied-marque"><img src="assets/img/logo-commune.png" alt="" width="58" height="58"><div><strong>Commune de ' + esc(S.nom) + "</strong><br><small>" + esc(S.region) + "</small></div></div>" +
     "<p>" + esc(c.adresse) + "<br>Téléphone : " + esc(c.telephone) + "<br>Courriel : " + esc(c.email) + "</p>" +
     '<table class="horaires" aria-label="Horaires d\'ouverture"><tbody>' + (S.horaires || []).map(function (h) { return "<tr><td>" + esc(h[0]) + "</td><td>" + esc(h[1]) + "</td></tr>"; }).join("") + "</tbody></table></div>" +
-    '<div><h3>Démarches</h3><ul><li><a href="demarches.html#cat=etat-civil">État civil</a></li><li><a href="demarches.html#cat=foncier">Foncier et urbanisme</a></li><li><a href="demarches.html#cat=economie">Marchés et taxes</a></li><li><a href="demarches.html#cat=associations">Associations</a></li><li><a href="contact.html#signaler">Signaler un problème</a></li></ul></div>' +
+    '<div><h3>Démarches</h3><ul><li><a href="demarches.html#cat=etat-civil">État civil</a></li><li><a href="demarches.html#cat=foncier">Foncier et urbanisme</a></li><li><a href="demarches.html#cat=economie">Marchés et taxes</a></li><li><a href="demarches.html#cat=associations">Associations</a></li><li><a href="contact.html#signaler">Signaler un problème</a></li><li><a href="suivi.html">Suivre ma demande</a></li></ul></div>' +
     '<div><h3>La commune</h3><ul><li><a href="mairie.html">Le maire et le conseil</a></li><li><a href="mairie.html#transparence">Budget et délibérations</a></li><li><a href="territoire.html">Territoire</a></li><li><a href="projets.html">Projets</a></li><li><a href="cooperation.html">Coopération</a></li></ul></div>' +
     '<div><h3>Suivre la commune</h3><ul><li><a href="actualites.html">Actualités et agenda</a></li><li><a href="' + esc(S.qwc) + '" target="_blank" rel="noopener">Application cartographique</a></li>' + (reseaux || '<li><span>Réseaux sociaux : à renseigner</span></li>') + "</ul></div>" +
-    '</div><div class="pied-bas"><span>' + esc(S.pied) + '</span><span><a href="contact.html">Contact</a> · <a href="#" class="haut">Haut de page ↑</a></span></div></div></footer>';
+    '</div><div class="pied-bas"><span>' + esc(S.pied) + '</span><span><a href="agent.html">Espace agents (démonstration)</a> · <a href="contact.html">Contact</a> · <a href="#" class="haut">Haut de page ↑</a></span></div></div></footer>';
   document.body.appendChild(el(pied));
 
   // ---------- Menu mobile

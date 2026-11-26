@@ -17,14 +17,14 @@
 <section class="section"><div class="wrap deux-col">
   <div>
     <h2>Écrire à la mairie</h2>
-    <form class="form" data-prototype="#conf-message">
+    <form class="form" id="form-message">
       <div class="form-ligne"><label>Nom et prénom<input name="nom" required autocomplete="name"></label>
         <label>Téléphone ou courriel<input name="contact" required></label></div>
       <label>Objet<select name="objet" required><option value="">Choisir…</option><option>Question sur une démarche</option><option>Projet ou partenariat</option><option>Diaspora</option><option>Autre</option></select></label>
       <label>Message<textarea name="message" rows="5" required></textarea></label>
       <button class="btn btn-plein" type="submit"><i data-lucide="send"></i>Envoyer</button>
     </form>
-    <div class="confirmation" id="conf-message" role="status"><b>Message prêt à être transmis.</b> Dans la version en service, il sera envoyé à la mairie, qui vous répondra.</div>
+    <div class="confirmation" id="conf-message" role="status"></div>
   </div>
   <div class="encart">
     <h3>Mairie</h3>
@@ -36,7 +36,7 @@
 <section class="section teinte" id="signaler"><div class="wrap">
   <div class="section-tete"><div><span class="surtitre">Signalement</span><h2>Signaler un problème</h2></div></div>
   <div class="deux-col">
-    <form class="form" data-prototype="#conf-signal">
+    <form class="form" id="form-signal">
       <fieldset style="border:0;padding:0;margin:0"><legend style="font-weight:700;margin-bottom:8px">Type de problème</legend>
         <div class="types">
           <label><input type="radio" name="type" value="eclairage" required><i data-lucide="lightbulb"></i>Éclairage</label>
@@ -52,7 +52,7 @@
       <label>Localisation <span class="aide">Cliquez sur la carte à l'endroit du problème, ou utilisez votre position.</span><input id="sig-loc" name="localisation" readonly placeholder="Latitude, longitude"></label>
       <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-ligne" type="button" id="sig-geoloc"><i data-lucide="locate-fixed"></i>Ma position</button>
         <button class="btn btn-plein" type="submit"><i data-lucide="send"></i>Envoyer le signalement</button></div>
-      <div class="confirmation" id="conf-signal" role="status"><b>Signalement enregistré (démonstration) : <span class="num"></span>.</b> Dans la version en service, il est transmis aux services techniques et apparaît sur la carte de suivi des interventions.</div>
+      <div class="confirmation" id="conf-signal" role="status"></div>
     </form>
     <div id="carte-signal" class="carte-map" role="region" aria-label="Carte pour localiser le problème"></div>
   </div>
@@ -62,9 +62,11 @@
 <script src="data/demarches.js"></script>
 <script src="data/actualites.js"></script>
 <script src="data/limite.js"></script>
+<script src="data/formulaires.js"></script>
 <script src="assets/vendor/leaflet/leaflet.js"></script>
 <script src="assets/vendor/lucide.min.js"></script>
 <script src="assets/js/layout.js"></script>
+<script src="assets/js/formulaires.js"></script>
 <script src="assets/js/pages.js"></script>
 </body>
 </html>
