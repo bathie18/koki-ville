@@ -3,7 +3,7 @@
 Site statique (HTML, CSS, JavaScript), sans outil de compilation ni service externe :
 Leaflet, les icônes (Lucide) et les polices (Fraunces, Manrope) sont inclus dans `assets/vendor` et `assets/fonts`.
 Seul le fond de carte vient d'OpenStreetMap.
-Hébergement : GitHub Pages (dépôt `bathie18/koki-ville`).
+Hébergement : GitHub Pages (dépôt `cegitgroup/koki-ville`).
 
 ## Pages
 
