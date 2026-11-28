@@ -25,11 +25,11 @@ window.SITE = {
   ],
 
   // Bandeau d'information en haut de toutes les pages ("" pour le masquer)
-  flash: "Prototype de démonstration : contenus indicatifs, à valider par les services de la mairie.",
+  flash: "",
 
   reseaux: { facebook: "", youtube: "", tiktok: "" },   // liens vers les pages officielles
 
-  pied: "© Commune de Coki — Prototype réalisé avec le CEGIT (Centre d'Expertise en Géomatique et Ingénierie Territoriale)",
+  pied: "© Commune de Coki — Réalisé avec le CEGIT (Centre d'Expertise en Géomatique et Ingénierie Territoriale) · Certaines données sont fictives",
 
   carte: { centre: [15.518, -16.008], zoom: 11 },     // la limite communale réelle est dans data/limite.js
   qwc: "https://demo-cmap.cegitgroup.com/"            // application cartographique de la commune
